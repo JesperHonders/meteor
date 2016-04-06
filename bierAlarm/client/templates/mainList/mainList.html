@@ -1,0 +1,19 @@
+<template name="mainList">
+{{#if currentUser}}
+  <form class="add-alarm">
+    <input type="text" name="name" placeholder="Where at?">
+    <input type="time" name="time">
+    <input type="date" name="date">
+    <input type="submit" value="Submit" />
+  </form>
+{{else}}
+  <p> Maak een account aan als je wil reageren op een alarm </p>
+{{/if}}
+
+<hr />
+  <ul>
+    {{#each alarms}}
+      <li><a href='/gebruiker/{{createdBy}}'>{{name}} - {{date}} - {{time}}</a> {{#if currentUser}} <button class="remove-alarm">Remove</button> {{/if}}</li>
+    {{/each}}
+</ul>
+</template>
