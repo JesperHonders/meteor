@@ -1,18 +1,20 @@
+Events = new Mongo.Collection('Events');
+
 Meteor.methods({
   addAlarm: function(name, date, time){
     if(!Meteor.userId()){
-      throw new Meteor.Error('No Acces!');
+      throw new Meteor.Error('No Access!');
     }
 
-    Alarms.insert({
+    Events.insert({
       name: name,
-      date: date,
-      time: time,
+      date: time,
+      time: date,
       createdAt: new Date(),
       createdBy: Meteor.userId()
     });
   },
   deleteAlarm: function(alarmId){
-    Alarms.remove(alarmId);
+    Events.remove(alarmId);
   }
 })

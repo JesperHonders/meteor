@@ -1,12 +1,4 @@
-Alarms = new Mongo.Collection('Alarms')
-
-Template.mainList.helpers ({
-  alarms: function(){
-    return Alarms.find({});
-  }
-})
-
-Template.mainList.events ({
+Template.addAlarm.events ({
   "submit .add-alarm": function(event){
     var name = event.target.name.value,
     date = event.target.date.value,
@@ -14,18 +6,13 @@ Template.mainList.events ({
 
     Meteor.call('addAlarm', name, time, date)
 
+    alert("Alarm Toegevoegd");
+
     event.target.name.value = '';
     event.target.date.value = '';
     event.target.time.value = '';
 
     return false;
-  },
-  "click .remove-alarm": function(event){
-    if(confirm('Are you sure you want to delete?')){
-      Meteor.call('deleteAlarm', this._id)
-    }
 
-    return false;
   }
-
 })

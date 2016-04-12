@@ -1,0 +1,17 @@
+<template name="header">
+  <header id="site_header">
+    <nav id="header_nav">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {{#if currentUser}}
+        <li>
+          <a href='/addAlarm'>Add Alarm</a>
+        </li>
+        {{/if}}
+      </ul>
+    </nav>
+    {{> loginButtons}}
+  </header>
+</template>

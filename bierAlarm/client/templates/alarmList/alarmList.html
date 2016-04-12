@@ -1,0 +1,18 @@
+<template name="alarmList">
+  {{> header}}
+  {{#if currentUser}}
+  {{else}}
+  <p> Maak een account aan als je wil reageren op een alarm </p>
+  {{/if}}
+    <h1>Huidige Alarmen</h1>
+    <ul>
+        {{#each Events}}
+        <li>
+          <a href='/event/{{_id}}'>{{name}} - {{date}} - {{time}}</a>
+          {{#if currentUser}}
+            <button class="remove-alarm">Remove</button>
+          {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</template>
