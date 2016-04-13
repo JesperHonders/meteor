@@ -24,5 +24,14 @@ Meteor.methods({
       eventId: eventID,
       attendant: Meteor.user().emails[0].address,
     })
+  },
+
+  addMessage: function(name, message, currentId) {
+    Messages.insert({
+      name: name,
+      message: message,
+      eventId: currentId,
+      time: Date.now(),
+    })
   }
 })

@@ -10,6 +10,6 @@ Router.route('event', {
   path: '/event/:_id',
   template: 'event',
   data: function() {
-    return {id: this.params._id, event: Events.findOne(this.params._id)}
+    return {id: this.params._id, event: Events.findOne(this.params._id), attendant: Attendants.findOne({eventId: this.params._id})}
   }
 });

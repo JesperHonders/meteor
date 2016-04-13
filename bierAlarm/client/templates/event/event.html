@@ -4,16 +4,15 @@
   <h4>Time: {{event.time}}, Date: {{event.date}}</h4>
   <span>Made by: {{event.createdBy}}</span> <br />
 
-  <button id="attendButton">Attend Event</button>
+  <button id="attendButton">Attend Event</button><span>Aantal Deelnemers: {{attendantsCount}}</span>
 
   <ul>
     {{#each Attendants}}
-    <p>
-      test
-    </p>
     <li>
-      <span>{{attendant}}</span>
+      {{attendant}}
     </li>
     {{/each}}
   </ul>
+
+  {{> eventChat}}
 </template>

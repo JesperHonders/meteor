@@ -1,0 +1,23 @@
+<template name="eventChat">
+  {{> welcome }}
+  {{> input }}
+  {{> messages }}
+</template>
+
+
+
+<template name="welcome">
+  <h3>
+    chat in bier @ {{event.name}}
+  </h3>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
