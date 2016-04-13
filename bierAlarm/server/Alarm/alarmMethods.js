@@ -27,11 +27,19 @@ Meteor.methods({
   },
 
   addMessage: function(name, message, currentId) {
+    var d = new Date();
+    var hours = d.getHours(); // => 9
+    var minutes = d.getMinutes(); // =>  30
+    var seconds = d.getSeconds();
+    var month = d.getUTCMonth() + 1;
+    var day = d.getUTCDate();
+    var year = d.getUTCFullYear();
+    var time = hours+":"+minutes+":"+seconds+" - "+day+"/"+month+"/"+year;
     Messages.insert({
       name: name,
       message: message,
       eventId: currentId,
-      time: Date.now(),
+      time: time,
     })
   }
 })

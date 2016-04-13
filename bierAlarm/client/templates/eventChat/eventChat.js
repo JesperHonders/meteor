@@ -10,7 +10,7 @@ Template.input.events = {
       if (Meteor.user())
         var name = Meteor.user().emails[0].address;
       else
-        var name = 'Anonymous';
+        var name = 'StiekemeGluipert';
       var message = document.getElementById('message');
       var currentId = this.id;
       if (message.value != '') {
