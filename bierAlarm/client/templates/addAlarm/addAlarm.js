@@ -6,9 +6,10 @@ Template.addAlarm.helpers ({
   }
 });
 
+
 Template.addAlarm.events ({
   "submit .add-alarm": function(event){
-    event.preventDefault();
+    event.preventDefault()
     var name = event.target.name.value,
     date = event.target.date.value,
     time = event.target.time.value;
@@ -22,6 +23,7 @@ Template.addAlarm.events ({
     event.target.time.value = '';
 
     return Router.go('/');
+
 
   }
 })

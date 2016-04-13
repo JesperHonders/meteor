@@ -1,7 +1,8 @@
 Events = new Mongo.Collection('Events');
+Attendants = new Mongo.Collection('Attendants');
 
 Meteor.methods({
-  addAlarm: function(name, date, time){
+  addAlarm: function(name, date, time, userEmail){
     if(!Meteor.userId()){
       throw new Meteor.Error('No Access!');
     }
@@ -11,10 +12,17 @@ Meteor.methods({
       date: time,
       time: date,
       createdAt: new Date(),
-      createdBy: Meteor.userId()
+      createdBy: Meteor.user().emails[0].address
     });
   },
   deleteAlarm: function(alarmId){
     Events.remove(alarmId);
+  },
+
+  addAttendant: function(eventID) {
+    Attendants.insert({
+      eventId: eventID,
+      attendant: Meteor.user().emails[0].address,
+    })
   }
 })

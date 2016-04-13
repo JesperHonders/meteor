@@ -1,6 +1,19 @@
 <template name="event">
   {{> header}}
-  <h1>Bier @ {{name}}</h1>
-  <h4>Time: {{time}}, Date: {{date}}</h4>
-  <span>Made by: {{Meteor.users}}</span>
+  <h1>Bier @ {{event.name}}</h1>
+  <h4>Time: {{event.time}}, Date: {{event.date}}</h4>
+  <span>Made by: {{event.createdBy}}</span> <br />
+
+  <button id="attendButton">Attend Event</button>
+
+  <ul>
+    {{#each Attendants}}
+    <p>
+      test
+    </p>
+    <li>
+      <span>{{attendant}}</span>
+    </li>
+    {{/each}}
+  </ul>
 </template>
