@@ -1,5 +1,14 @@
+Template.addAlarm.helpers ({
+  setToday: function() {
+    var todayDate = new Date();
+    document.getElementById('datePicker').value = todayDate;
+    console.log('test');
+  }
+});
+
 Template.addAlarm.events ({
   "submit .add-alarm": function(event){
+    event.preventDefault();
     var name = event.target.name.value,
     date = event.target.date.value,
     time = event.target.time.value;
@@ -12,7 +21,7 @@ Template.addAlarm.events ({
     event.target.date.value = '';
     event.target.time.value = '';
 
-    return false;
+    return Router.go('/');
 
   }
 })
