@@ -10,8 +10,6 @@ Router.route('event', {
   path: '/event/:_id',
   template: 'event',
   data: function() {
-    return Events.findOne(this.params._id)},
-  createdBy: function() {
-    return Meteor.users.find({})
+    return {id: this.params._id, event: Events.findOne(this.params._id)}
   }
 });
