@@ -39,7 +39,8 @@ Meteor.methods({
       name: name,
       message: message,
       eventId: currentId,
-      time: time,
+      displayTime: time,
+      time: d
     })
   }
 })

@@ -8,13 +8,13 @@
 
 <template name="welcome">
   <h3>
-    chat in bier @ {{event.name}}
+    chat in: {{event.name}}
   </h3>
 </template>
 
 <template name="messages">
   {{#each messages}}
-    <strong>{{name}}:</strong> {{message}} - <span>{{time}}</span><br>
+    <strong>{{name}}:</strong> {{message}} - <span>{{displayTime}}</span><br>
   {{/each}}
 </template>
 
