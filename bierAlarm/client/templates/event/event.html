@@ -1,18 +1,20 @@
 <template name="event">
   {{> header}}
-  <h1>{{event.name}}</h1>
-  <h4>Time: {{event.time}}, Date: {{event.date}}</h4>
-  <span>Made by: {{event.createdBy}}</span> <br />
+  <main id="event-page">
+    <h1>{{event.name}}</h1>
+    <h4>Time: {{event.time}}, Date: {{event.date}}</h4>
+    <span>Made by: {{event.createdBy}}</span> <br />
 
-  <button id="attendButton">Attend Event</button><span>Aantal Deelnemers: {{attendantsCount}}</span>
+    <button id="attendButton">Attend Event</button><span>Aantal Deelnemers: {{attendantsCount}}</span>
 
-  <ul>
-    {{#each Attendants}}
-    <li>
-      {{attendant}}
-    </li>
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each Attendants}}
+      <li>
+        {{attendant}}
+      </li>
+      {{/each}}
+    </ul>
 
-  {{> eventChat}}
+    {{> eventChat}}
+  </main>
 </template>

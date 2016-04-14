@@ -13,11 +13,14 @@
 </template>
 
 <template name="messages">
-  <main id="chatWindow" style="overflow-y: scroll; height:200px; background: black; color: green;">
-
-
+  <main id="chatWindow">
   {{#each messages}}
-    <strong>{{name}}:</strong> {{message}} - <span>{{displayTime}}</span><br>
+  <div class="message">
+    <strong class="message_id">{{name}}:</strong>
+    <span class="message_content">{{message}}</span>
+    <span class="message_time">{{displayTime}}</span>
+    <br />
+  </div>
   {{/each}}
   </main>
 </template>

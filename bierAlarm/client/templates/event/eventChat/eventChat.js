@@ -18,23 +18,23 @@ Template.input.events = {
 
         document.getElementById('message').value = '';
         message.value = '';
-        var element = document.getElementById("chatWindow");
-        var scrolled = false;
-        function updateScroll(){
-            if(!scrolled){
-              setInterval(function () {
-                element.scrollTop = element.scrollHeight;
-              }, 100);
-            }
-        }
-
-        $("#chatWindow").on('scroll', function(){
-            scrolled=true;
-        });
-
-        updateScroll();
 
       }
+
+      setTimeout(function () {
+        $('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
+      }, 50);
+
     }
   }
-}
+};
+
+Template.eventChat.rendered = function () {
+  setTimeout(function () {
+    console.log("test")
+    setTimeout(function () {
+      $('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
+      console.log('ran function')
+    }, 50);
+  }, 1000);
+};
