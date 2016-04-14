@@ -1,7 +1,7 @@
 <template name="eventChat">
   {{> welcome }}
-  {{> input }}
   {{> messages }}
+  {{> input }}
 </template>
 
 
@@ -13,9 +13,13 @@
 </template>
 
 <template name="messages">
+  <main id="chatWindow" style="overflow-y: scroll; height:200px; background: black; color: green;">
+
+
   {{#each messages}}
     <strong>{{name}}:</strong> {{message}} - <span>{{displayTime}}</span><br>
   {{/each}}
+  </main>
 </template>
 
 <template name="input">

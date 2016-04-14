@@ -1,6 +1,6 @@
 Template.messages.helpers({
     messages: function() {
-        return Messages.find({eventId: this.id}, { sort: { time: -1}});
+        return Messages.find({eventId: this.id}, { sort: { time: 1}}, {limit: 2});
     }
 });
 
@@ -18,6 +18,22 @@ Template.input.events = {
 
         document.getElementById('message').value = '';
         message.value = '';
+        var element = document.getElementById("chatWindow");
+        var scrolled = false;
+        function updateScroll(){
+            if(!scrolled){
+              setInterval(function () {
+                element.scrollTop = element.scrollHeight;
+              }, 100);
+            }
+        }
+
+        $("#chatWindow").on('scroll', function(){
+            scrolled=true;
+        });
+
+        updateScroll();
+
       }
     }
   }
