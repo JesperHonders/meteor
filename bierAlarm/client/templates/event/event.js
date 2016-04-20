@@ -17,8 +17,8 @@ Template.event.helpers ({
 Template.event.events({
   "click #attendButton": function(){
     var currentId = this.id;
-    console.log(Meteor.user().emails[0].address)
-    if (Attendants.find({attendant: Meteor.user().emails[0].address, eventId: this.id}).count() > 0){
+    console.log(Meteor.user().username)
+    if (Attendants.find({attendant: Meteor.user().username, eventId: this.id}).count() > 0){
       alert('U staat al op aanwezig')
     } else {
       console.log('test')

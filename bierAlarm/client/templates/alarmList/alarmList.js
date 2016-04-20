@@ -12,4 +12,8 @@ Template.alarmList.events ({
 
     return false;
   }
-})
+});
+
+Template.alarmList.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('Events');
+});

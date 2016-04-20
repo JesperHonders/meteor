@@ -6,9 +6,9 @@ Template.messages.helpers({
 
 Template.input.events = {
   'keydown input#message' : function (event) {
-    if (event.which == 13) { // 13 is the enter key event
+    if (event.which == 13) {
       if (Meteor.user())
-        var name = Meteor.user().emails[0].address;
+        var name = Meteor.user().username;
       else
         var name = 'StiekemeGluipert';
       var message = document.getElementById('message');
@@ -31,10 +31,14 @@ Template.input.events = {
 
 Template.eventChat.rendered = function () {
   setTimeout(function () {
-    console.log("test")
     setTimeout(function () {
       $('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
-      console.log('ran function')
     }, 50);
   }, 1000);
 };
+
+Template.eventChat.onCreated(function subscribe(){
+      Meteor.subscribe('Messages');
+      Meteor.subscribe('Events');
+      Meteor.subscribe('Attendants');
+})

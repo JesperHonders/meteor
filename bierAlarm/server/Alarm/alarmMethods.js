@@ -12,7 +12,7 @@ Meteor.methods({
       date: time,
       time: date,
       createdAt: new Date(),
-      createdBy: Meteor.user().emails[0].address
+      createdBy: Meteor.user().username
     });
   },
   deleteAlarm: function(alarmId){
@@ -22,7 +22,7 @@ Meteor.methods({
   addAttendant: function(eventID) {
     Attendants.insert({
       eventId: eventID,
-      attendant: Meteor.user().emails[0].address,
+      attendant: Meteor.user().username,
     })
   },
 
