@@ -16,7 +16,7 @@
   <main id="chatWindow">
   {{#each messages}}
   <div class="message">
-    <span class="message_id">{{name}}:</span><br />
+    <strong class="message_id">{{name}}:</strong>
     <span class="message_content">{{message}}</span><br />
     <span class="message_time">{{displayTime}}</span>
     <br />
@@ -26,5 +26,5 @@
 </template>
 
 <template name="input">
-  <p>Message: <input type="text" id="message"></p>
+  <input class="chat_input" type="text" id="message">
 </template>

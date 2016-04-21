@@ -2,26 +2,27 @@
   {{> header}}
   {{#if currentUser}}
   {{else}}
-  <p> Maak een account aan als je wil reageren op een alarm </p>
+  <p class="not_logged_in_text"> Maak een account aan als je wil reageren op een alarm </p>
   {{/if}}
-    <main id="alarmList_main">
-      <h1>Huidige Events</h1>
-      <br />
-        {{#each Events}}
-          <div class="event_wrapper">
-            <a href='/event/{{_id}}'>
+  <h1 id="page_title">Huidige Events</h1>
+  <main id="alarmList_main">
 
-                <h2>{{name}}</h2>
-                {{date}} - {{time}}
+    <br />
+      {{#each Events}}
+        <div class="event_wrapper">
+          <a href='/event/{{_id}}'>
 
-            </a>
+              <h2>{{name}}</h2>
+              {{date}} - {{time}}
 
-          {{#if currentUser}}
-          <br />
-            <button class="remove-alarm">Remove</button>
-          {{/if}}
-        </div>   <!-- End event_wrapper -->
+          </a>
 
-        {{/each}}
-      </main>
+        {{#if currentUser}}
+        <br />
+          <button class="remove-alarm">Remove</button>
+        {{/if}}
+      </div>   <!-- End event_wrapper -->
+
+      {{/each}}
+    </main>
 </template>

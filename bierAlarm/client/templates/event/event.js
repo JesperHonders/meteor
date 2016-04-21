@@ -11,7 +11,7 @@ Template.event.helpers ({
     } else {
       return console.log('nee');
     }
-  }
+  },
 })
 
 Template.event.events({

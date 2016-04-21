@@ -1,3 +1,7 @@
 #event-page {
-  margin-left: 2em;
+  margin: 0em 2em;
+}
+
+.chatSection{
+  display: block;
 }

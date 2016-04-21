@@ -1,16 +1,16 @@
 #chatWindow {
   overflow-y: scroll;
   height:600px;
+  width: 100%;
   max-width: 70em;
-  background-image: url(/images/chatWindow/background.jpg);
   color: black;
 }
 
 .message {
-  margin-left: 1em;
+  margin: 0em 1em;
   background: white;
   margin-top: 1em;
-  max-width: 30em;
+  max-width: 100%;
   border-radius: 10px;
   padding: 0.5em 1em;;
 }
@@ -27,4 +27,8 @@
   text-align: right;
   color: #666;
   font-size: 8px;
+}
+
+.chat_input {
+  width: 70em;
 }

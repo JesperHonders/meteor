@@ -1,0 +1,10 @@
+#alarm_page {
+  margin: 2em 20%;
+}
+
+#alarm_page input{
+  width: 100%;
+  height: 4em;
+  display: block;
+  margin-bottom: 2em;
+}

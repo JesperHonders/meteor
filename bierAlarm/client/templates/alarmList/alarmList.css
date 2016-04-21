@@ -1,7 +1,7 @@
 .event_wrapper {
   background: white;
   width: 30em;
-  padding: 0em 1em;
+  padding: 0em 1em 1em 2em;
   margin: 1em 1em;
 }
 
@@ -9,4 +9,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#page_title {
+  text-align: center;
+  color: white;
+}
+
+.not_logged_in_text {
+  text-align: center;
+  color: white;
 }
