@@ -1,0 +1,12 @@
+.event_wrapper {
+  background: white;
+  width: 30em;
+  padding: 0em 1em;
+  margin: 1em 1em;
+}
+
+#alarmList_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

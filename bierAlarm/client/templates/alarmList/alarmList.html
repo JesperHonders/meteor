@@ -4,15 +4,24 @@
   {{else}}
   <p> Maak een account aan als je wil reageren op een alarm </p>
   {{/if}}
-    <h1>Huidige Events</h1>
-    <ul>
+    <main id="alarmList_main">
+      <h1>Huidige Events</h1>
+      <br />
         {{#each Events}}
-        <li>
-          <a href='/event/{{_id}}'>{{name}} - {{date}} - {{time}}</a>
+          <div class="event_wrapper">
+            <a href='/event/{{_id}}'>
+
+                <h2>{{name}}</h2>
+                {{date}} - {{time}}
+
+            </a>
+
           {{#if currentUser}}
+          <br />
             <button class="remove-alarm">Remove</button>
           {{/if}}
-        </li>
+        </div>   <!-- End event_wrapper -->
+
         {{/each}}
-    </ul>
+      </main>
 </template>
