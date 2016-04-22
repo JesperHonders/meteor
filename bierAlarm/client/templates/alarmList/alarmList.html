@@ -2,9 +2,32 @@
   {{> header}}
   {{#if currentUser}}
   {{else}}
-  <p class="not_logged_in_text"> Maak een account aan als je wil reageren op een alarm </p>
+  <div class="center_child">
+    <main id="uitleg">
+      <h1>Welkom bij de Event-Planner</h1>
+      <p>
+        Wat kunt u met deze applicatie?
+        <ul>
+          <li>
+            Events aanmaken
+          </li>
+          <li>
+            Reageren op events
+          </li>
+          <li>
+            Aangeven of u komt
+          </li>
+        </ul>
+        Om gebruik te maken van deze applicatie dient u eerst een account aan te maken.
+      </p>
+    </main>
+  </div>
   {{/if}}
+
+
+  {{#if currentUser}}
   <h1 id="page_title">Huidige Events</h1>
+
   <main id="alarmList_main">
 
     <br />
@@ -25,4 +48,6 @@
 
       {{/each}}
     </main>
+    {{/if}}
+
 </template>

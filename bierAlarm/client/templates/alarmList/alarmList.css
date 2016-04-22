@@ -16,7 +16,12 @@
   color: white;
 }
 
-.not_logged_in_text {
-  text-align: center;
-  color: white;
+#uitleg {
+  margin: 0 auto;
+  display: block;
+}
+
+.center_child {
+  display: flex;
+  justify-content: center;
 }

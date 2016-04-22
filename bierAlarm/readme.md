@@ -1,19 +1,28 @@
 # Bier Alarm
 
+## De structuur van de app
 
+De app is gemaakt met de gedachten om alle componenten modulair op te zetten. Dit houdt in dat elke pagina los te herbruiken is, zonder hier veel aanpassingen voor hoeven te verrichten.
 
-## Todo
+De mappen structuur is als volgt
 
-  Create Groups
-    Create Group pages
-    Asign users to Groups
+-Client
 
-  Notification 1 hour before event start
+--templates
+---addAlarm
+----files
+---alarmList
+----files
+---event
+----files
+----eventchat
+-----files
+---header
+----files
+--collections.js
+--main.html
+--main.js
+--router.js
 
-  <!-- Event pages -->
-
-  <!-- Login -->
-
-  <!-- setup router -->
-
-  <!-- Event chat system -->
+-Public
+-Server
