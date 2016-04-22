@@ -6,23 +6,16 @@ De app is gemaakt met de gedachten om alle componenten modulair op te zetten. Di
 
 De mappen structuur is als volgt
 
--Client
-
---templates
----addAlarm
-----files
----alarmList
-----files
----event
-----files
-----eventchat
------files
----header
-----files
---collections.js
---main.html
---main.js
---router.js
-
--Public
--Server
+├── Client
+|   ├── Templates
+|       └── PageDirectories
+|            └── PageSubDirectories (for example eventChat)
+|   └── main.html /js /css
+├── server
+|   ├── Alarm <-- Holds All the methods
+|   ├── publications.js
+|   └── main.js
+├── Public
+|   ├── images
+|       └── PageDirectories
+|           └── images
